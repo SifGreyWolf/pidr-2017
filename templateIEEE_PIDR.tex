@@ -334,7 +334,7 @@ Mail: valentin.wegmann-serin@telecomnancy.eu}
 \and
 \IEEEauthorblockN{Raphael Agathon}
 \IEEEauthorblockA{Telecom Nancy \\
-mail : raphael.agathon@telecomnancy.eu}}
+Mail : raphael.agathon@telecomnancy.eu}}
 
 
 % conference papers do not typically use \thanks and this command
@@ -524,10 +524,20 @@ Subsection text here.
 
 
 
-\section{Etat de l'art}
-The conclusion goes here.
+\section{État de l'art}
+Il existe de nombreuses applications permettant l'édition de réseaux bayésiens. Celles-ci ont toutes leurs spécificités que l'on peut organiser sous forme de catégories. \\
+\begin{itemize}
+	\item{Langage de programmation :} Il existe des toolbox pour les réseaux bayésiens dans presque tous les langages de programmation. Les plus connus sont Java Bayes qui est en Java et Bayes Net Toolbox sous Matlab. Il existe d'autres application dont on ne connait pas le langage utilisé. Celle-ci sont la plupart du temps payante ou sont des applications web. La plus connue et utilisées est BayesiaLab. Les contraintes imposent que l'outil à développer soit sous Java et Matlab en même temps. Dimple est une API qui possède une version Java et une Matlab, mais il n'y a aucune communication entre les deux ce qui ne correspond pas à la problématique et aux contraintes. DynGraph, l'application utilisée est la seul à répondre à cette contrainte. Cette contrainte d'intercommunication est la plus restrictive car l'outil doit permettre l'utilisation de Matlab et de Java en parallèle. Toutes les modifications faites dans l'un des langage doit directement impacter l'autre. 
+	
+	\item{Interface graphique :} Parmi toutes les applications connues de réseaux bayésiens, seules 30\% possèdent une interface graphique. La plupart de celles-ci sont en Java comme Java Bayes ou payante comme Bayesialab. Bayes Net Toolbox, CRFtoolbox, DBNbox, OpenGM2 et Probabilistic Modeling Toolkit sont toutes les applications codées sous Matlab. Aucune d'entre elles ne possèdent d'interface graphique. La contrainte de l'interface graphique impose que 'outil en possède déja une pou que celle-ci soit codée par dessus. DynGraph possède une interface graphique en Java Swing, qui offre une grande liberté (présentation, affichage,...) contrairement à ce qui peut être fait sous Matlab. 
 
-
+	\item{Le prix :} l'outil doit être open source et gratuit. La plupart des applications  existantes le sont, mais certaines sont payantes comme BayesiaLab qui à été utilisé dans la processus de construction de l'outil de développement de réseaux bayésiens. DynGraph à été codée par des étudiants de notre école,dans le même environnement que le nôtre. Cette application est donc open source et gratuite et nous pouvons facilement communiquer avec les développeurs.
+	
+	\item{Réseaux bayésiens et Inférence :}Les différentes applications permettent de générer des réseaux bayésiens et de faire de l'inférence sur ceux-ci. Il existe différents algorithme pour le calcul de l'inférence comme JTree et VarElim. DynGraph, l'outil utilisé ne possède aucun outil d'édition de réseaux bayésiens ou de calcul d'inférence. Cet outil permet de construite des graphes pouvant être à nœuds colorés et arcs évalués orienté ou non. 
+	
+\end{itemize}
+\\
+Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il été choisit de combiner cet outil avec une application Java d'édition de réseaux bayésiens. L'application sélectionnée est Jayes. Jayes est un éditeur de réseaux bayésiens, open source et gratuit qui ne dispose pas d'interface graphique. Parmi les autres applications Java, Jayes possède un code facile de compréhension et permettant une réécriture du code plus facile.
 
 
 % conference papers do not normally have an appendix
