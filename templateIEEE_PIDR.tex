@@ -60,6 +60,7 @@
 % \documentclass[conference]{../sty/IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[]{algorithm2e}
 
 
 % Some very useful LaTeX packages include:
@@ -374,7 +375,7 @@ Mail : raphael.agathon@telecomnancy.eu}}
 
 
 \begin{center}
-Java, Matlab, inférence, probabilité, graphe probabilistex
+Java, Matlab, inférence, probabilité, graphe probabiliste
 \end{center}
 
 % As a general rule, do not put math, special symbols or citations
@@ -539,16 +540,75 @@ Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il
 % use section* for acknowledgment
 \section{Méthodologie}
 
-\subsection{Outil DynGraph}
-Subsection text here.
+Pour arriver à l'objectif, le travail à été divisé en deux. Une partie de compréhension et de modification de l'outil DynGraph réaliser par Mr Wegmann-Serin et une seconde partie sur la compréhension et l'implémentation des réseaux bayésiens ainsi que des calculs d'inférences. Cette seconde partie à été réalisée par Mr Agathon. \\
 
-\subsection{Les réseaux bayesiens}
-Subsection text here.
 
-\subsection{}
-Subsection text here.
+\subsection{Analyse de l'outil DynGraph}
 
-\subsection{Plan}
+Expliquer comment fonctionne Dyngraph, ce qu'un utilisateur peux faire avec et quelles sont les limites. Parler des corrections apportées. Bien préciser que cet outil ne permet que de faire de la visualisation de graphe, aucun calcul n'est fait et qu'il n'y a que la partie front-end qui est codé. Dans le back-end il n'y a que la communication avec Matlab.
+Parler de comment sont construits les graphes : une liste de nœuds et une liste d'arcs (nœud début et nœud fin). Dire qu'il manque toute la partie utile aux calculs comme les listes des nœuds parents et enfants, ou une matrice d'adjacence... 
+
+\subsection{Implémentation des réseaux bayésiens}
+
+Un réseau bayésien est un graphe acyclique orienté non coloré. Les arcs ne possèdent pas de valeurs. Chaque nœud possède une table de probabilité qui dépend de ses états (vrai ou faux mais d'autres peuvent être ajouté) mais aussi des états de ses nœuds pères. \\
+\paragraph{Algorithme d'acyclicité} 
+\\
+Ainsi, pour transformer un graphe en réseau bayésien il faut vérifier la contrainte d'acyclicité. Les autres propriétés des réseaux bayésiens peuvent être remplies par de simples de modifications (décoloration et suppression des poids sur les arcs) du graphe qui n'impactent pas les données présente dans celui-ci. \\
+Il existe différents algorithmes de détection de cycle dans un graphe. Des algorithmes comme celui du tri topologique, ou celui de Floyd's Tortoise and Hare sont performants mais nécessites des outils qui nécessite une totale refonte de la gestion des graphes dans l'outil DynGraph. \\
+Nous avons donc décidé de coder notre propre algorithme de détection de cycle. Cet algorithme a été spécifiquement construit pour notre cas d'étude : permettre à un utilisateur de savoir si il y a un cycle dans le graphe et si oui afficher la ou les zones à problèmes. \\
+L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fils ne fait pas partie d'un cycle. Par suppression successive de ces nœuds et arcs associes on peut déterminer qu'il y a un ou des cycles dans la ou les zones restantes.  \\
+
+ \begin{algorithm}[H]
+ \KwData{Graphe G contenant une liste de nœuds et une liste d'arc}
+ \KwResult{liste des nœuds à problème : N}
+ N liste de nœuds initialiser avec les noeuds de G\;
+ A liste d'arcs initialiser avec les arcs de G\;
+ test = True\;
+ \While{test = True}{
+ 	Ra liste d'arcs initialement vide\; 
+ 	Rp liste des nœuds père, initialement vide\; 
+ 	Rf liste des nœuds fils initialement vide\; 
+ 	Rnpf liste des nœuds non père et non fils initialement
+ 	vide\;
+ 	test = False\;
+ 	\ForAll{Arc a dans A }{
+ 		Ajout du noeud head à la liste Rp\;
+ 		Ajout du noeud tail à la liste Rf\;
+	} 	
+ 	\EndFor
+	\ForAll{Node n dans N }{
+		Ajout des nœuds non présent dans l'intersection entre Rp et Rf dans Rnpf\;
+	}
+	\EndFor 
+	\If{Rnpf de taille non nulle}{
+		test = True\;
+		\ForAll{Arc a dans A}{
+			\If{Si un des nœuds de a appartient à Rnpf}{
+			Ajout de l'arc a dans la liste Ra\;	 
+			}
+		}
+		Suppression des nœuds de Ra dans la liste d'arcs A\;
+		Suppression des nœuds de Rnpf dans la liste de nœuds  N\; 
+	}	  
+ }
+ \caption{Algorithme de détection de cycle}
+\end{algorithm}
+\\
+Cet algorithme permet de détecter la présence de cycle dans un graphe. Cet algorithme ne permet pas d'avoir précisément les nœuds inscrits dans un cycle. Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc mis en nœuds à problème. \\
+Cet algorithme est suffisant pour la contrainte d'acyclicité. Il ne surcharge pas le graphe.
+
+\paragraph{Transformation du graphe en réseau bayésien}
+
+\paragraph{implémentation des probabilités}
+
+
+\subsection{Modification de l'interface graphique }
+
+Parler de la division en couche/Étape du code. Une étape pour la création de graphe, une pour la mise en place des probabilité, une pour le calcul d'inférence. l'objectif est de réduire le nombre de contrôle à effectuer a chaque modification du programme. Parler aussi des habitudes des gens qui utilisent ce genre de programme : Une création de graphe et 0 modifications, quelques modifications des probabilités et beaucoup de calculs d'inférences
+
+\subsection{Calcul de l'inférence}
+
+\subsection{Communication Matlab\Java}
 Subsection text here.
 
 
