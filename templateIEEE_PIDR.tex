@@ -116,7 +116,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -540,13 +540,21 @@ Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il
 % use section* for acknowledgment
 \section{Méthodologie}
 
-Pour arriver à l'objectif, le travail à été divisé en deux. Une partie de compréhension et de modification de l'outil DynGraph réaliser par Mr Wegmann-Serin et une seconde partie sur la compréhension et l'implémentation des réseaux bayésiens ainsi que des calculs d'inférences. Cette seconde partie à été réalisée par Mr Agathon. \\
+Pour arriver à l'objectif, le travail à été divisé en deux. Une partie de compréhension et de modification de l'outil DynGraph réaliser par M. Wegmann-Serin et une seconde partie sur la compréhension et l'implémentation des réseaux bayésiens ainsi que des calculs d'inférences. Cette seconde partie à été réalisée par M. Agathon. \\
 
 
 \subsection{Analyse de l'outil DynGraph}
 
-Expliquer comment fonctionne Dyngraph, ce qu'un utilisateur peux faire avec et quelles sont les limites. Parler des corrections apportées. Bien préciser que cet outil ne permet que de faire de la visualisation de graphe, aucun calcul n'est fait et qu'il n'y a que la partie front-end qui est codé. Dans le back-end il n'y a que la communication avec Matlab.
-Parler de comment sont construits les graphes : une liste de nœuds et une liste d'arcs (nœud début et nœud fin). Dire qu'il manque toute la partie utile aux calculs comme les listes des nœuds parents et enfants, ou une matrice d'adjacence... 
+DynGraph est un outil permettant la création et l'édition de graphe. Celui-ci est implémenté en java et se lance depuis Matlab.
+L'interface (cf fig 1) est composé d'un menu basique et d'une barre composé de boutons permettant d'éditer le graphe. L'éditeur ne permet actuellement que de créer des graphes qui sont orientés ou non, colorés ou non. L'éditeur ne permet pas d'imposer des contraintes lors de la création du graphe telle que l'acyclicité ou la non-évaluation des arcs. Chaque graphe crée est représenté par une liste de nœuds et d'arcs. Un arc étant défini par un noeud-début et un noeud-fin et il n'est décrit que par cela. De plus, ce logiciel n'est qu'une visualisation de graphe et ne permet pas de faire des calculs. En effet, toute la partie utile aux calculs n'est pas présente : la liste des successeurs et prédécesseurs ou une matrice d'adjacence ou d'incidence. Seul le côté front-end est très implémenté. Pour ce qui est du back-end, il s'agit de la communication entre Java et Matlab qui est présente puisque chaque action effectué sur l'interface - en java - doit être fait en Matlab et inversement.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.15]{Dyngraph.png}\\
+\caption{interface}
+\label{fig 1}
+\end{center}
+\end{figure}
 
 \subsection{Implémentation des réseaux bayésiens}
 
@@ -591,7 +599,7 @@ L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fi
 		Suppression des nœuds de Rnpf dans la liste de nœuds  N\; 
 	}	  
  }
- \caption{Algorithme de détection de cycle}
+\caption{Algorithme de détection de cycle}
 \end{algorithm}
 \\
 Cet algorithme permet de détecter la présence de cycle dans un graphe. Cet algorithme ne permet pas d'avoir précisément les nœuds inscrits dans un cycle. Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc mis en nœuds à problème. \\
