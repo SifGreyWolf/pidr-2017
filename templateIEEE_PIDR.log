@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.5.15)  15 MAY 2017 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.5.15)  15 MAY 2017 21:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,69 +443,156 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 105.
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ))
-(./templateIEEE_PIDR.aux)
+(c:/texlive/2016/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count94
+
+(c:/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip44
+
+(c:/texlive/2016/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(c:/texlive/2016/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+********************************************************
+\skiptotal=\skip45
+\skiplinenumber=\skip46
+\skiprule=\skip47
+\skiphlne=\skip48
+\skiptext=\skip49
+\skiplength=\skip50
+\algomargin=\skip51
+\skipalgocfslide=\skip52
+\algowidth=\dimen126
+\inoutsize=\dimen127
+\inoutindent=\dimen128
+\interspacetitleruled=\dimen129
+\interspacealgoruled=\dimen130
+\interspacetitleboxruled=\dimen131
+\algocf@ruledwidth=\skip53
+\algocf@inoutbox=\box28
+\algocf@inputbox=\box29
+\AlCapSkip=\skip54
+\AlCapHSkip=\skip55
+\algoskipindent=\skip56
+\algocf@nlbox=\box30
+\algocf@hangingbox=\box31
+\algocf@untilbox=\box32
+\algocf@skipuntil=\skip57
+\algocf@capbox=\box33
+\algoheightruledefault=\skip58
+\algoheightrule=\skip59
+\algotitleheightruledefault=\skip60
+\algotitleheightrule=\skip61
+\c@algocfline=\count95
+\c@algocfproc=\count96
+\c@algocf=\count97
+\algocf@algoframe=\box34
+\algocf@algobox=\box35
+) (./templateIEEE_PIDR.aux)
 \openout1 = `templateIEEE_PIDR.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 315.
+LaTeX Font Info:    ... okay on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 315.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 315.
 
 -- Lines per column: 56 (exact).
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 405.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 405.
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--530
+LaTeX Warning: Citation `murphyk' on page 1 undefined on input line 386.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 524.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 524.
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--524
+
+ []
+
+[1{c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.534 P
+       our pallier à la non présence de réseaux bayésiens dans l'outil D...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
 
  []
 
@@ -516,21 +603,109 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.540 P
-       our pallier à la non présence de réseaux bayésiens dans l'outil D...
+l.556 A
+       insi, pour transformer un graphe en réseau bayésien il faut vérifi...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 3108) in paragraph at lines 556--560
+ \T1/ptm/m/it/10 a) Al-go-rithme d'acyclicit�: [][] \T1/ptm/m/n/10 Ainsi, pour 
+trans-former
+ []
 
- [1{c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \hbox (badness 2302) in paragraph at lines 556--560
+\T1/ptm/m/n/10 peu-vent �tre rem-plies par de sim-ples de mod-i-fi-ca-tions
+ []
 
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 556--560
+
+ []
+
+
+! LaTeX Error: [H] in two columns mode is not allowed for algorithms.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.561  \begin{algorithm}[H]
+                           
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+! Undefined control sequence.
+<recently read> \EndFor 
+                        
+l.594  \caption
+               {Algorithme de détection de cycle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \EndFor 
+                        
+l.594  \caption
+               {Algorithme de détection de cycle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.597 C
+       et algorithme permet de détecter la présence de cycle dans un graph...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[2]
+! Undefined control sequence.
+<argument> Communication Matlab\Java 
+                                     
+l.611 \subsection{Communication Matlab\Java}
+                                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...name }\fi Communication Matlab\Java 
+                                                  }{\thepage }}
+l.611 \subsection{Communication Matlab\Java}
+                                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 No file templateIEEE_PIDR.bbl.
+
+LaTeX Warning: Citation `Matlab' on page 3 undefined on input line 650.
+
+
+LaTeX Warning: Citation `jayes' on page 3 undefined on input line 651.
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -542,27 +717,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
+[3
 
-] (./templateIEEE_PIDR.aux) ) 
+] (./templateIEEE_PIDR.aux)
+
+LaTeX Warning: There were undefined references.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 1648 strings out of 493013
- 24444 string characters out of 6136993
- 83198 words of memory out of 5000000
- 5232 multiletter control sequences out of 15000+600000
- 104817 words of font info for 103 fonts, out of 8000000 for 9000
+ 2625 strings out of 493013
+ 39848 string characters out of 6136993
+ 110225 words of memory out of 5000000
+ 6195 multiletter control sequences out of 15000+600000
+ 104846 words of font info for 103 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 26i,7n,19p,1038b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2016/texmf-dist/fonts/enc/dvips/base/8
-r.enc}<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/
-texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2016/texmf
--dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a
-.pfb>
-Output written on templateIEEE_PIDR.pdf (2 pages, 55480 bytes).
+ 26i,18n,27p,1038b,1351s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2016/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2016/texmf-dist/fonts/t
+ype1/urw/times/utmbi8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/times/ut
+mr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on templateIEEE_PIDR.pdf (3 pages, 67162 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 35 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
