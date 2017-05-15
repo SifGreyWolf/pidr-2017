@@ -372,6 +372,7 @@ mail : raphael.agathon@telecomnancy.eu}}
 \maketitle
 
 
+
 \begin{center}
 Java, Matlab, inférence, probabilité, graphe probabilistex
 \end{center}
@@ -380,6 +381,8 @@ Java, Matlab, inférence, probabilité, graphe probabilistex
 % in the abstract
 \begin{abstract}
 The abstract goes here.
+
+\cite{murphyk}
 \end{abstract}
 
 % no keywords
@@ -401,25 +404,15 @@ The abstract goes here.
 
 \section{Introduction}
 % no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.8b and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
 
-\hfill mds
- 
-\hfill August 26, 2015
-
-\subsection{Contexte}
-Subsection text here.
+\subsection{Le contexte}
+Notre projet s'inscrit dans le cadre de la recherche. Les chercheurs utilisent régulièrement des outils basés sur des graphes probabilistes ou quasi-probabilistes.
+Par exemple, l'étude de la fiabilité d'un système passe par l'analyse d'un graphe comprenant tous les différents composants du système avec leurs états et probabilités associés -la fiabilité étant l'étude des défaillances des systèmes d'un point de vue statistique-. Les graphes utilisés dans cette étude sont des réseaux bayésiens. Ce sont des modèles probabilistes que l'on trouve sous forme de graphe acyclique orientés. Ces modèles utilisent la méthode de l'inférence qui permet de déduire la probabilité d'un événement à partir de celles d'autres événements déjà évalués. Elle repose sur le théorème de Bayes.
 
 \subsection{Problèmatique}
-Subsection text here.
-
+Les chercheurs utilisant principalement l'outil Matlab pour leur simulation, le but de ce projet est de développer une application opensource communiquant avec Matlab et permettant l'usage des réseaux bayésiens.
 \subsection{Contribution}
-Subsection text here.
+
 
 \subsection{Plan}
 Subsection text here.
@@ -554,8 +547,8 @@ Subsection text here.
 \section{Conclusion}
 
 \section{Remerciements}
-
-\bibliography{Bibliographie}
+Nous souhaitons adresser nos remerciements aux personnes nous ayant aider dans la rédaction
+de cet article, en particulier à M.Simon, notre encadrant de PIDR qui a su nous éclairer dans l'avancée de notre projet.
 
 \section{annexe}
 
@@ -581,7 +574,11 @@ Subsection text here.
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
+\bibliographystyle{plain}
+\bibliography{./pidr}
 
+\cite{Matlab}
+\cite{jayes}
 
 
 
