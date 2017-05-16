@@ -529,17 +529,17 @@ Les chercheurs utilisant principalement l'outil Matlab pour leur simulation, le 
 \section{État de l'art}
 Il existe de nombreuses applications permettant l'édition de réseaux bayésiens. Celles-ci ont toutes leurs spécificités que l'on peut organiser sous forme de catégories. \\
 \begin{itemize}
-	\item{Langage de programmation :} Il existe des toolbox pour les réseaux bayésiens dans presque tous les langages de programmation. Les plus connus sont Java Bayes qui est en Java et Bayes Net Toolbox sous Matlab. Il existe d'autres application dont on ne connait pas le langage utilisé. Celle-ci sont la plupart du temps payante ou sont des applications web. La plus connue et utilisées est BayesiaLab. Les contraintes imposent que l'outil à développer soit sous Java et Matlab en même temps. Dimple est une API qui possède une version Java et une Matlab, mais il n'y a aucune communication entre les deux ce qui ne correspond pas à la problématique et aux contraintes. DynGraph, l'application utilisée est la seul à répondre à cette contrainte. Cette contrainte d'intercommunication est la plus restrictive car l'outil doit permettre l'utilisation de Matlab et de Java en parallèle. Toutes les modifications faites dans l'un des langage doit directement impacter l'autre. \\
+	\item{Langage de programmation :} Il existe des toolbox pour les réseaux bayésiens dans presque tous les langages de programmation. Les plus connues sont Java Bayes qui est en Java et Bayes Net Toolbox sous Matlab. Il existe d'autres application dont on ne connait pas le langage utilisé. Celle-ci sont la plupart du temps payante ou sont des applications web. La plus connue d'entre elles est BayesiaLab. Les contraintes imposent que l'outil à développer soit sous Java et Matlab en même temps. Dimple est une API qui possède une version Java et une Matlab, mais il n'y a aucune communication entre les deux ce qui ne correspond pas à la problématique et aux contraintes. DynGraph, l'application utilisée est la seul à répondre à cette contrainte. Cette contrainte d'intercommunication est la plus restrictive car l'outil doit permettre l'utilisation de Matlab et de Java en parallèle. Toutes les modifications faites dans l'un des langage doit directement impacter l'autre. \\
 	
-	\item{Interface graphique :} Parmi toutes les applications connues de réseaux bayésiens, seules 30\% possèdent une interface graphique. La plupart de celles-ci sont en Java comme Java Bayes ou payante comme Bayesialab. Bayes Net Toolbox, CRFtoolbox, DBNbox, OpenGM2 et Probabilistic Modeling Toolkit sont toutes les applications codées sous Matlab. Aucune d'entre elles ne possèdent d'interface graphique. La contrainte de l'interface graphique impose que 'outil en possède déja une pou que celle-ci soit codée par dessus. DynGraph possède une interface graphique en Java Swing, qui offre une grande liberté (présentation, affichage,...) contrairement à ce qui peut être fait sous Matlab. \\
+	\item{Interface graphique :} Parmi toutes les applications connues de réseaux bayésiens, seules 30\% possèdent une interface graphique. La plupart de celles-ci sont en Java comme Java Bayes ou payante comme Bayesialab. Bayes Net Toolbox, CRFtoolbox, DBNbox, OpenGM2 et Probabilistic Modeling Toolkit sont toutes les applications codées sous Matlab. Aucune d'entre elles ne possèdent d'interface graphique. La contrainte de l'interface graphique impose que l'outil en possède déja une ou que celle-ci soit codée par dessus. DynGraph possède une interface graphique en Java Swing, qui offre une grande liberté contrairement à ce qui peut être fait sous Matlab. \\
 
-	\item{Le prix :} l'outil doit être open source et gratuit. La plupart des applications  existantes le sont, mais certaines sont payantes comme BayesiaLab qui à été utilisé dans la processus de construction de l'outil de développement de réseaux bayésiens. DynGraph à été codée par des étudiants de notre école,dans le même environnement que le nôtre. Cette application est donc open source et gratuite et nous pouvons facilement communiquer avec les développeurs. \\
+	\item{Le prix :} l'outil doit être open source et gratuit. La plupart des applications  existantes le sont, mais certaines sont payantes comme BayesiaLab. Bayesialab a été utilisé dans la processus de construction de l'outil de développement de réseaux bayésiens. DynGraph à été codée par des étudiants de notre école, dans le même environnement que le nôtre. Cette application est donc open source et gratuite et nous pouvons facilement communiquer avec les développeurs. \\
 	
-	\item{Réseaux bayésiens et Inférence :}Les différentes applications permettent de générer des réseaux bayésiens et de faire de l'inférence sur ceux-ci. Il existe différents algorithme pour le calcul de l'inférence comme JTree et VarElim. DynGraph, l'outil utilisé ne possède aucun outil d'édition de réseaux bayésiens ou de calcul d'inférence. Cet outil permet de construite des graphes pouvant être à nœuds colorés et arcs évalués orienté ou non. \\
+	\item{Réseaux bayésiens et Inférence :}Les différentes applications permettent de générer des réseaux bayésiens et de faire de l'inférence sur ceux-ci. Il existe différents algorithme pour le calcul de l'inférence comme JTree et VarElim. DynGraph, l'outil utilisé ne possède aucun outil d'édition de réseaux bayésiens ou de calcul d'inférence. Cet outil permet de construite des graphes pouvant être à nœuds colorés et arcs évalués, orientés ou non. \\
 	
 \end{itemize}
 \\
-Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il été choisit de combiner cet outil avec une application Java d'édition de réseaux bayésiens. L'application sélectionnée est Jayes. Jayes est un éditeur de réseaux bayésiens, open source et gratuit qui ne dispose pas d'interface graphique. Parmi les autres applications Java, Jayes possède un code facile de compréhension et permettant une réécriture du code plus facile. \\
+Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il été choisit de combiner cet outil avec une application Java d'édition de réseaux bayésiens. L'application sélectionnée est Jayes. Jayes est un éditeur de réseaux bayésiens, open source et gratuit qui ne dispose pas d'interface graphique.Jayes permet aussi de faire des calculs d'inférences. Parmi les autres applications Java, Jayes possède un code simple de compréhension et permettant une réécriture du code plus facile. \\
 
 
 % conference papers do not normally have an appendix
@@ -548,7 +548,7 @@ Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il
 % use section* for acknowledgment
 \section{Méthodologie}
 
-Pour arriver à l'objectif, le travail à été divisé en deux. Une partie de compréhension et de modification de l'outil DynGraph réaliser par M. Wegmann-Serin et une seconde partie sur la compréhension et l'implémentation des réseaux bayésiens ainsi que des calculs d'inférences. Cette seconde partie à été réalisée par M. Agathon. \\
+Pour arriver à l'objectif, le travail a été divisé en deux. Une partie de compréhension et de modification de l'outil DynGraph réaliser par M. Wegmann-Serin et une seconde partie sur la compréhension et l'implémentation des réseaux bayésiens ainsi que des calculs d'inférences. Cette seconde partie a été réalisée par M. Agathon. \\
 
 
 \subsection{Analyse de l'outil DynGraph}
@@ -570,16 +570,16 @@ L'interface (cf fig 1) est composé d'un menu basique et d'une barre composé de
 
 \subsection{Implémentation des réseaux bayésiens}
 
-Un réseau bayésien est un graphe acyclique orienté non coloré. Les arcs ne possèdent pas de valeurs. Chaque nœud possède une table de probabilité qui dépend de ses états (vrai ou faux mais d'autres peuvent être ajouté) mais aussi des états de ses nœuds pères. \\
+Un réseau bayésien est un graphe acyclique orienté non coloré. Les arcs ne possèdent pas de poids. Chaque nœud possède une table de probabilité qui dépend de ses états (vrai ou faux mais d'autres peuvent être ajouté) mais aussi des états de ses nœuds pères. \\
 \paragraph{Algorithme d'acyclicité \hfill } 
 \\
-Ainsi, pour transformer un graphe en réseau bayésien il faut vérifier la contrainte d'acyclicité. Les autres propriétés des réseaux bayésiens peuvent être remplies par de simples de modifications (décoloration et suppression des poids sur les arcs) du graphe qui n'impactent pas les données présente dans celui-ci. \\
-Il existe différents algorithmes de détection de cycle dans un graphe. Des algorithmes comme celui du tri topologique, ou celui de Floyd's Tortoise and Hare sont performants mais nécessites des outils qui nécessite une totale refonte de la gestion des graphes dans l'outil DynGraph. \\
+Ainsi, pour transformer un graphe en réseau bayésien il faut vérifier la contrainte d'acyclicité. Les autres propriétés des réseaux bayésiens peuvent être remplies par de simples de modifications du graphe (décoloration et suppression des poids sur les arcs) qui n'impactent pas les données présente dans celui-ci. \\
+Il existe différents algorithmes de détection de cycle dans un graphe. Des algorithmes comme celui du tri topologique, ou celui de Floyd's Tortoise and Hare sont performants mais nécessites des outils qui implique une totale refonte de la gestion des graphes dans l'outil DynGraph. \\
 Nous avons donc décidé de coder notre propre algorithme de détection de cycle. Cet algorithme a été spécifiquement construit pour notre cas d'étude : permettre à un utilisateur de savoir si il y a un cycle dans le graphe et si oui afficher la ou les zones à problèmes. \\
 L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fils ne fait pas partie d'un cycle. Par suppression successive de ces nœuds et arcs associes on peut déterminer qu'il y a un ou des cycles dans la ou les zones restantes.  \\
 
  \begin{algorithm}[H]
- \KwData{Graphe G contenant une liste de nœuds et une liste d'arc}
+ \KwData{Graphe G contenant une liste de nœuds et une liste d'arcs}
  \KwResult{liste des nœuds à problème : N}
  N liste de nœuds initialiser avec les noeuds de G\;
  A liste d'arcs initialiser avec les arcs de G\;
@@ -607,7 +607,7 @@ L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fi
 			Ajout de l'arc a dans la liste Ra\;	 
 			}
 		}
-		Suppression des nœuds de Ra dans la liste d'arcs A\;
+		Suppression des arcs de Ra dans la liste d'arcs A\;
 		Suppression des nœuds de Rnpf dans la liste de nœuds  N\; 
 	}	  
  }
@@ -615,7 +615,7 @@ L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fi
 \end{algorithm}
 \\
 Cet algorithme permet de détecter la présence de cycle dans un graphe. Cet algorithme ne permet pas d'avoir précisément les nœuds inscrits dans un cycle. Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc mis en nœuds à problème. \\
-Cet algorithme est suffisant pour la contrainte d'acyclicité. Il ne surcharge pas le graphe. \\
+Cet algorithme est suffisant pour la contrainte d'acyclicité. De plus il ne surcharge pas le graphe avec des élément comme une matrice d'incidence, une matrice d'adjacence, liste des nœuds père et fils. \\
 
 \paragraph{Transformation du graphe en réseau bayésien \hfill }
 \\ Comme cela est écrit plus haut, le graphe présent dans l'interface DynGraph ne contient aucune information permettant de faire des calculs à partir d'éléments du graphe. Le graphe n'est présent que pour la partie graphique. Il permet à l'interface graphique de générer l'affichage.\\
@@ -628,7 +628,7 @@ Cette méthode est la première à laquelle nous avons pensé. Par surcharger il
 \item la liste des nœuds fils
 \item une table de probabilités 
 \end{itemize}
-Ainsi que toutes les fonctions et procédures pour que c'est différents éléments ce mettent à jour automatiquement. \\
+Ainsi que toutes les fonctions et procédures pour que ces différents éléments se mettent à jour automatiquement. \\
 De plus comme il est écrit dans la partie \textcolor{red}{mettre le bon indice de partie} l'outil d'édition de réseaux bayésiens est une extension de l'outil DynGraph. C'est pour cela que nous n'avons pas choisi cette méthode car elle implique d'énormes modifications sur le code existant. \\
 
 \subparagraph{Ajouter un graphe de réseau bayésien en parallèle du graphe de l'outil DynGraph \hfill }
@@ -636,25 +636,27 @@ De plus comme il est écrit dans la partie \textcolor{red}{mettre le bon indice 
 
 \textcolor{blue}{Pas entièrement fini }\\
 
-\paragraph{Découpage de l'édition de réseaux bayésiens \hfill}
+\subsection{Implémentation des probabilités}
+
+\subsection{Calcul de l'inférence}
+
+\subsection{Découpage de l'édition de réseaux bayésiens \hfill}
 \\
 Éditer un réseau bayésiens impose certaines contraintes sur le graphe comme son acyclicité mais aussi des modifications dynamiques liées à toutes évolutions de celui-ci. Par exemple, l'ajout d'un arc entre deux nœuds va modifier la liste des nœuds pères pour l'un et la liste des nœuds fils pour l'autre. Mais cela implique une mise à jour le la table de probabilité du nœuds fils. Son nombre de lignes est multiplié par le nombre d'états du nœud ajouté en père. \\
-Pour minimiser ces problèmes de modifications dynamiques et minimiser le nombre de calculs liés aux contraintes il a été choisi de découper l'édition et l'utilisation de réseaux bayésiens en plusieurs étapes. C'est étapes correspondent aux pratiques utilisateur  : une édition de graphe, quelques modifications de probabilités et de nombreux calculs d'inférences. \\
+Pour minimiser ces problèmes de modifications dynamiques et minimiser le nombre de calculs liés aux contraintes, il a été choisi de découper l'édition et l'utilisation de réseaux bayésiens en plusieurs étapes. Ces étapes correspondent aux pratiques utilisateur  : une édition de graphe, quelques modifications de probabilités et de nombreux calculs d'inférences. \\
 
 \subparagraph{Étape de création de graphe \hfill} \\
-Cette étape est celle présente dans l'outil DynGraph. L'utilisateur à la possibilité de créer le graphe qu'il souhaite, acyclique ou non. Durant cette étape aucun réseau bayésien n'est instancié car  l'outil ne sait pas si l'utilisateur veut transformer son graphe en réseau bayésien. Si une transformation est demandée, l'algorithme de détection de cycle est lancé. Cette méthode de découpage fait qu'il n'y a qu'un seul appel à l'algorithme de détection de cycle.
+Cette étape est celle présente dans l'outil DynGraph. L'utilisateur à la possibilité de créer le graphe qu'il souhaite, acyclique ou non. Durant cette étape aucun réseau bayésien n'est instancié car  l'outil ne sait pas si l'utilisateur veut transformer son graphe en réseau bayésien. Si une transformation est demandée, l'algorithme de détection de cycle est lancé. Cette méthode de découpage fait qu'il n'y a qu'un seul appel à l'algorithme de détection de cycle. \\
 
-\subparagraph{Étape de mise en place des probabilités}
-
-
-\paragraph{implémentation des probabilités}
-
+\subparagraph{Étape de mise en place des probabilités \hfill}
+\\
+Dés lors que le graphe est transformé en réseau bayésien, tout retour à l'étape précédente invalide le réseau bayésiens si des modifications sont faites sur celui-ci. La table de probabilité de chaque nœud dépend de ses états et des différents états que peuvent prendre ses nœuds pères. Cette construction de table est faite durant la transformation du graphe. La table est automatiquement initialiser avec le bon nombre de colonnes et de lignes. \\
+L'ajout de probabilités se fait nœud par nœud. Chaque modification d'une table de probabilités n'est prise en compte que si pour chaque ligne, la somme des valeurs est égale à 1. 
+Un passage à l'étape de calcul d'inférence n'est validé que si tous les nœuds ont une table valide. \\
 
 \subsection{Modification de l'interface graphique }
 
 Parler de la division en couche/Étape du code. Une étape pour la création de graphe, une pour la mise en place des probabilité, une pour le calcul d'inférence. l'objectif est de réduire le nombre de contrôle à effectuer a chaque modification du programme. Parler aussi des habitudes des gens qui utilisent ce genre de programme : Une création de graphe et 0 modifications, quelques modifications des probabilités et beaucoup de calculs d'inférences
-
-\subsection{Calcul de l'inférence}
 
 \subsection{Communication Matlab\Java}
 Subsection text here.

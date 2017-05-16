@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.5.15)  16 MAY 2017 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.5.15)  16 MAY 2017 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,6 +731,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
+
+Underfull \hbox (badness 3271) in paragraph at lines 15--15
+ [][] []\T1/ptm/m/n/10 Découpage de l'édi-tion de ré-seaux 
+ []
+
 )
 \tf@toc=\write3
 \openout3 = `templateIEEE_PIDR.toc'.
@@ -748,11 +753,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
 Underfull \hbox (badness 3343) in paragraph at lines 534--535
 \T1/ptm/m/n/10 et Pro-ba-bi-lis-tic Mo-de-ling Tool-kit sont toutes les
- []
-
-
-Underfull \hbox (badness 1540) in paragraph at lines 534--535
-\T1/ptm/m/n/10 offre une grande li-berté (pré-sen-ta-tion, af-fi-chage,...)
  []
 
 
@@ -821,6 +821,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 551--552
 Underfull \hbox (badness 10000) in paragraph at lines 556--558
 
  []
+
+
+Underfull \vbox (badness 2035) has occurred while \output is active []
+
 
 <Dyngraph.png, id=10, 760.34062pt x 596.98032pt>
 File: Dyngraph.png Graphic file (type png)
@@ -908,6 +912,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 617--619
  []
 
 
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+
+
 ! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -930,10 +938,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 621--623
 Underfull \hbox (badness 10000) in paragraph at lines 621--623
 
  []
-
-
-Underfull \vbox (badness 1005) has occurred while \output is active []
-
 
 ! Undefined control sequence.
 l.624 \subparagraph
@@ -975,7 +979,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.641 Ã
+l.645 Ã
        ‰diter un rÃ©seau bayÃ©siens impose certaines contraintes sur le grap...
 
 Your command was ignored.
@@ -983,17 +987,22 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 5832) in paragraph at lines 641--643
+Underfull \hbox (badness 1546) in paragraph at lines 645--647
+\T1/ptm/m/n/10 bayé-siens en plu-sieurs étapes. Ces étapes cor-res-pondent
+ []
+
+
+Underfull \hbox (badness 5832) in paragraph at lines 645--647
 \T1/ptm/m/n/10 mo-di-fi-ca-tions de pro-ba-bi-li-tés et de nom-breux cal-culs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--643
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
 ! Undefined control sequence.
-l.644 \subparagraph
+l.648 \subparagraph
                    {Ã‰tape de crÃ©ation de graphe \hfill} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1001,20 +1010,40 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+Underfull \hbox (badness 3536) in paragraph at lines 648--650
+\T1/ptm/m/n/10 Cette étape est celle pré-sente dans l'ou-til Dyn-Graph.
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 648--650
+\T1/ptm/m/n/10 L'uti-li-sa-teur à la pos-si-bi-lité de créer le graphe qu'il
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--650
+
+ []
+
+[3]
 ! Undefined control sequence.
-l.647 \subparagraph
-                   {Ã‰tape de mise en place des probabilitÃ©s}
+l.651 \subparagraph
+                   {Ã‰tape de mise en place des probabilitÃ©s \hfill}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[3]
+
+Underfull \hbox (badness 10000) in paragraph at lines 651--656
+
+ []
+
 ! Undefined control sequence.
 <argument> Communication Matlab\Java 
                                      
-l.659 \subsection{Communication Matlab\Java}
+l.661 \subsection{Communication Matlab\Java}
                                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1025,7 +1054,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...name }\fi Communication Matlab\Java 
                                                   }{\thepage }}
-l.659 \subsection{Communication Matlab\Java}
+l.661 \subsection{Communication Matlab\Java}
                                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1035,10 +1064,10 @@ and I'll forget about whatever was undefined.
 
 No file templateIEEE_PIDR.bbl.
 
-LaTeX Warning: Citation `Matlab' on page 4 undefined on input line 699.
+LaTeX Warning: Citation `Matlab' on page 4 undefined on input line 701.
 
 
-LaTeX Warning: Citation `jayes' on page 4 undefined on input line 700.
+LaTeX Warning: Citation `jayes' on page 4 undefined on input line 702.
 
 
 ** Conference Paper **
@@ -1075,7 +1104,7 @@ live/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2016/texmf-di
 st/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on templateIEEE_PIDR.pdf (4 pages, 73255 bytes).
+Output written on templateIEEE_PIDR.pdf (4 pages, 74144 bytes).
 PDF statistics:
  35 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
