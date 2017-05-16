@@ -540,6 +540,7 @@ Il existe de nombreuses applications permettant l'édition de réseaux bayésien
 \end{itemize}
 \\
 Pour pallier à la non présence de réseaux bayésiens dans l'outil DynGraph il été choisit de combiner cet outil avec une application Java d'édition de réseaux bayésiens. L'application sélectionnée est Jayes. Jayes est un éditeur de réseaux bayésiens, open source et gratuit qui ne dispose pas d'interface graphique.Jayes permet aussi de faire des calculs d'inférences. Parmi les autres applications Java, Jayes possède un code simple de compréhension et permettant une réécriture du code plus facile. \\
+Jayes ne dispose d'aucun contrôle sur l'acyclicité des graphes,les dimensions des tables de probabilités ne peuvent être changées qu'une seule fois et il n'y aucun contrôle sur la saisie de données. Ces éléments semblent être des contraintes mais ils nous ont permis de coder à notre manière certaines parties de l'outil .\\ 
 
 
 % conference papers do not normally have an appendix
@@ -562,7 +563,7 @@ L'interface (cf fig 1) est composé d'un menu basique et d'une barre composé de
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.15]{Dyngraph.png}\\
+\includegraphics[scale=0.30]{Dyngraph.png}\\
 \caption{interface}
 \label{fig 1}
 \end{center}
@@ -629,16 +630,40 @@ Cette méthode est la première à laquelle nous avons pensé. Par surcharger il
 \item une table de probabilités 
 \end{itemize}
 Ainsi que toutes les fonctions et procédures pour que ces différents éléments se mettent à jour automatiquement. \\
-De plus comme il est écrit dans la partie \textcolor{red}{mettre le bon indice de partie} l'outil d'édition de réseaux bayésiens est une extension de l'outil DynGraph. C'est pour cela que nous n'avons pas choisi cette méthode car elle implique d'énormes modifications sur le code existant. \\
+De plus comme il est écrit dans la partie III-A l'outil d'édition de réseaux bayésiens est une extension de l'outil DynGraph. C'est pour cela que nous n'avons pas choisi cette méthode car elle implique d'énormes modifications sur le code existant. \\
 
 \subparagraph{Ajouter un graphe de réseau bayésien en parallèle du graphe de l'outil DynGraph \hfill }
-\\ Cette seconde méthode est celle qui est implémenter. Les réseaux bayésiens et le calcul d'inférence on été rajoutés via l'ajout de l'outil Jayes (éditeur de réseaux bayésiens, Java, open source, sans interface graphique) dans l'outil DynGraph. \\  
+\\ Cette seconde méthode est celle qui est implémenter. Les réseaux bayésiens et le calcul d'inférence on été rajoutés via l'ajout de l'outil Jayes (éditeur de réseaux bayésiens, Java, open source, sans interface graphique). \\
+Cette seconde méthode nous permet de ne pas surcharger l'outil initial. Ainsi si le graphe n'est pas un réseau bayésien, le graphe reste identique. Si le graphe est un réseau bayésien, le graphe visible est celui de DynGraph et en back-end il y a le graphe de Jayes.\\
+Lors de la transformation en réseau bayésien. Il y création du graphe de Jayes. 
 
-\textcolor{blue}{Pas entièrement fini }\\
+ \begin{algorithm}[H]
+ \KwData{Graphe G contenant une liste de nœuds et une liste d'arcs}
+ \KwResult{Graphe de réseau bayésien R}
+ N liste de nœuds initialiser avec les noeuds de G\;
+ A liste d'arcs initialiser avec les arcs de G\;
+ test = True\;
+ \ForAll{Node n dans N}{
+ 	Création du nœud dans graphe R\;
+ 	Ajout des états True et False pour le nouveau noeud de R\;
+ }
+ \EndFor
+ \ForAll{Arc a dans A}{
+ 	Ajout du nœud père dans la liste des nœuds père du fils\; 
+ }
+ \EndFor 
+\caption{Algorithme de transformation de graphe}
+\end{algorithm}
+\\
+Après cette étape le graphe réseau bayésien est valide. Toutes les tables de probabilités ont la bonne taille et il ne reste plus qu'à les remplir.
 
 \subsection{Implémentation des probabilités}
+Dans un réseau bayésien chaque nœud possède une table de probabilités. Cette table possède un nombre de lignes et de colonnes dépendant d'un certain nombre de paramètres. \\
+Le nombre de lignes dépend des différents états que peuvent prendre les nœuds pères de ce nœud. Ce nombre est égal au produit du nombre d'états de chaque nœud père. Si un nœud à 3 nœuds pères, le premier à 2 états, le second et le troisième à 3 états, il y aura 2*3*3 = 18 lignes. Le nombre de colonne dépend du nombre d'état du nœud. Ainsi chaque case du tableau contient la probabilité que le nœud soit dans un état sachant que les nœuds pères sont dans un certain état.\\
+En plus de cette contrainte sur le nombre de lignes et de colonnes, il y a une contraintes sur les valeurs entrées en paramètre. Premièrement il doit y avoir le bon nombre de valeurs et la somme des valeurs sur une ligne doit être égal à 1.   
 
 \subsection{Calcul de l'inférence}
+Le calcul de l'inférence repose sur l'algorithme de junction tree. Cet Algorithme est présent dans l'outil Jayes. Pour pouvoir l'utiliser sans problème il faut juste vérifier que tous les nœuds du graphe ou bien leur table de probabilités valide. 
 
 \subsection{Découpage de l'édition de réseaux bayésiens \hfill}
 \\
@@ -654,17 +679,24 @@ Dés lors que le graphe est transformé en réseau bayésien, tout retour à l'�
 L'ajout de probabilités se fait nœud par nœud. Chaque modification d'une table de probabilités n'est prise en compte que si pour chaque ligne, la somme des valeurs est égale à 1. 
 Un passage à l'étape de calcul d'inférence n'est validé que si tous les nœuds ont une table valide. \\
 
+\subparagraph{Étape de calcul d'inférence}
+Les calculs d'inférences ne nécessite pas de contrôle sur les paramètres rentrés. Si un cas d'inférence est invalide, c'est le calcul qui le montrera. Le calcul de l'inférence repose uniquement sur une bonne construction du réseau bayésien. 
+
 \subsection{Modification de l'interface graphique }
 
 Parler de la division en couche/Étape du code. Une étape pour la création de graphe, une pour la mise en place des probabilité, une pour le calcul d'inférence. l'objectif est de réduire le nombre de contrôle à effectuer a chaque modification du programme. Parler aussi des habitudes des gens qui utilisent ce genre de programme : Une création de graphe et 0 modifications, quelques modifications des probabilités et beaucoup de calculs d'inférences
 
-\subsection{Communication Matlab\Java}
+\subsection{Communication entre Matlab Java}
 Subsection text here.
 
 
 \section{Résultats}
+	L'outil créer permet l'édition de réseau bayésiens tous en conservant les possibilité qu'offre l'outil DynGraph. Les graphes de réseau bayésien et les calculs d'inférence sont fonctionnels mais peuvent être optimisés. 
 
 \section{Conclusion}
+
+	L'objectif de notre projet à été de créer un outil Matlab et Java pour l'édition de réseaux bayésiens. Cet outil s'ajoute en extension de le l'outil DynGraph.\\
+	
 
 \section{Remerciements}
 Nous souhaitons adresser nos remerciements aux personnes nous ayant aider dans la rédaction

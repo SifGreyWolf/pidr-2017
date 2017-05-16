@@ -8,14 +8,14 @@
 \contentsline {section}{\numberline {III}M\IeC {\'e}thodologie}{2}
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Analyse de l'outil DynGraph}{2}
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Impl\IeC {\'e}mentation des r\IeC {\'e}seaux bay\IeC {\'e}siens}{2}
-\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {III-B}0a}Algorithme d'acyclicit\IeC {\'e} \hfill }{2}
+\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {III-B}0a}Algorithme d'acyclicit\IeC {\'e} \hfill }{3}
 \contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {III-B}0b}Transformation du graphe en r\IeC {\'e}seau bay\IeC {\'e}sien \hfill }{3}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Impl\IeC {\'e}mentation des probabilit\IeC {\'e}s}{3}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Calcul de l'inf\IeC {\'e}rence}{3}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}D\IeC {\'e}coupage de l'\IeC {\'e}dition de r\IeC {\'e}seaux bay\IeC {\'e}siens \hfill }{3}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-F}}Modification de l'interface graphique }{4}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-G}}Communication Matlab}{4}
-\contentsline {section}{\numberline {IV}R\IeC {\'e}sultats}{4}
-\contentsline {section}{\numberline {V}Conclusion}{4}
-\contentsline {section}{\numberline {VI}Remerciements}{4}
-\contentsline {section}{\numberline {VII}annexe}{4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Impl\IeC {\'e}mentation des probabilit\IeC {\'e}s}{4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Calcul de l'inf\IeC {\'e}rence}{4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}D\IeC {\'e}coupage de l'\IeC {\'e}dition de r\IeC {\'e}seaux bay\IeC {\'e}siens \hfill }{4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-F}}Modification de l'interface graphique }{5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-G}}Communication entre Matlab Java}{5}
+\contentsline {section}{\numberline {IV}R\IeC {\'e}sultats}{5}
+\contentsline {section}{\numberline {V}Conclusion}{5}
+\contentsline {section}{\numberline {VI}Remerciements}{5}
+\contentsline {section}{\numberline {VII}annexe}{5}
