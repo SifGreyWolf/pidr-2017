@@ -52,6 +52,7 @@
 
 
 \documentclass[conference]{IEEEtran}
+
 % Some Computer Society conferences also require the compsoc mode option,
 % but others use the standard conference format.
 %
@@ -313,9 +314,10 @@
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
-
+\usepackage{setspace}
 
 \begin{document}
+
 %
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
@@ -405,24 +407,23 @@ The abstract goes here.
 \IEEEpeerreviewmaketitle
 
 
-
 \section{Introduction}
 % no \IEEEPARstart
 
 \subsection{Le contexte}
-Notre projet s'inscrit dans le cadre de la recherche. Les chercheurs utilisent régulièrement des outils basés sur des graphes probabilistes ou quasi-probabilistes.
-Par exemple, l'étude de la fiabilité d'un système passe par l'analyse d'un graphe comprenant tous les différents composants du système avec leurs états et probabilités associés -la fiabilité étant l'étude des défaillances des systèmes d'un point de vue statistique-. Les graphes utilisés dans cette étude sont des réseaux bayésiens. Ce sont des modèles probabilistes que l'on trouve sous forme de graphe acyclique orientés. Ces modèles utilisent la méthode de l'inférence qui permet de déduire la probabilité d'un événement à partir de celles d'autres événements déjà évalués. Elle repose sur le théorème de Bayes.
+Dans le cadre de la recherche, les chercheurs sont régulièrement amenés à utiliser des outils basés sur des graphes probabilistes ou quasi-probabilistes.\\
+Par exemple, l'étude de la fiabilité d'un système passe par l'analyse d'un graphe comprenant tous les différents composants du système avec leurs états et probabilités associés - la fiabilité étant l'étude des défaillances des systèmes d'un point de vue statistique -. Les graphes utilisés dans cette étude sont des réseaux bayésiens \cite{kmurphy} \cite{Smail}. Ce sont des modèles probabilistes que l'on trouve sous la forme de graphe acyclique et orientés. Ces modèles utilisent la méthode de l'inférence qui est un procédé permettant de déduire la probabilité d'un événement à partir de celles d'autres événements déjà évalués. Elle repose sur le théorème de Bayes qui repose sur les probabilités conditionnelles et permettant de connaître la probabilité d'un événement:  A sachant B ; lorsque l'on connait la probabilité de A, B, et de B sachant A. \\
+Cette usage est souvent accompagné d'une simulation sur logiciel tel que Matlab. Cependant, Matlab ne dispose pas d'outils pratique avec interface graphique permettant de travailler sur les réseaux bayésiens.
 
 
 \subsection{Problèmatique}
-Les chercheurs utilisant principalement l'outil Matlab pour leur simulation, le but de ce projet est de développer une application opensource communiquant avec Matlab et permettant l'usage des réseaux bayésiens.
-
-\textcolor{red}{Parler de notre envie de mettre notre code comme un outil suppléméntaire de DynGraph : C'est une contrainte mais je ne vois où mettre la partie contrainte }
+Les chercheurs utilisant principalement l'outil Matlab pour leur simulation, le but de ce projet est de développer une application open-source communiquant avec Matlab et permettant l'usage des réseaux bayésiens.
 
 \subsection{Contribution}
+Afin de répondre au problème donné nous avons choisi de trier tous les logiciels déjà existants puis de surcharger un programme possédant en partie les critères demandés.
 
 
-\subsection{Plan}
+
 
 \tableofcontents
 
@@ -555,11 +556,8 @@ Pour arriver à l'objectif, le travail a été divisé en deux. Une partie de co
 \subsection{Analyse de l'outil DynGraph}
 
 DynGraph est un outil permettant la création et l'édition de graphe. Celui-ci est implémenté en java et se lance depuis Matlab.
-L'interface (cf fig 1) est composé d'un menu basique et d'une barre composé de boutons permettant d'éditer le graphe. L'éditeur ne permet actuellement que de créer des graphes qui sont orientés ou non, colorés ou non. L'éditeur ne permet pas d'imposer des contraintes lors de la création du graphe telle que l'acyclicité ou la non-évaluation des arcs. Chaque graphe crée est représenté par une liste de nœuds et d'arcs. Un arc étant défini par un noeud-début et un noeud-fin et il n'est décrit que par cela. De plus, ce logiciel n'est qu'une visualisation de graphe et ne permet pas de faire des calculs. En effet, toute la partie utile aux calculs n'est pas présente : la liste des successeurs et prédécesseurs ou une matrice d'adjacence ou d'incidence. Seul le côté front-end est très implémenté. Pour ce qui est du back-end, il s'agit de la communication entre Java et Matlab qui est présente puisque chaque action effectué sur l'interface - en java - doit être fait en Matlab et inversement. \\
+L'interface (cf fig 1) est composé d'un menu basique et d'une barre composé de boutons permettant d'éditer le graphe. L'éditeur ne permet actuellement que de créer des graphes qui sont orientés ou non, colorés ou non. L'éditeur ne permet pas d'imposer des contraintes lors de la création du graphe telle que l'acyclicité ou la non-évaluation des arcs. Chaque graphe crée est représenté par une liste de nœuds et d'arcs. Un arc étant défini par un noeud-début et un noeud-fin et il n'est décrit que par cela. De plus, ce logiciel n'est qu'une visualisation de graphe et ne permet pas de faire des calculs. En effet, toute la partie utile aux calculs n'est pas présente : la liste des successeurs et prédécesseurs ou une matrice d'adjacence ou d'incidence. Seul le côté front-end est très implémenté. Pour ce qui est du back-end, il s'agit de la communication entre Java et Matlab qui est présente puisque chaque action effectué sur l'interface - en java - doit être fait en Matlab et inversement. Enfin, plutôt que de reconstruire une nouvelle interface graphique, nous avons fait en sorte que le code que nous produisions soit un outil supplémentaire pour DynGraph afin que le logiciel puisse répondre aux attentes. Ainsi, nous avons implémenté de nouvelles fonctionnalités. 
 
-\textcolor{red}{Parler de notre envie de mettre notre code comme un outil supplémentaire de DynGraph : c'est ce répéter mais c'est l'intro donc ça compte pas comme un doublon}
-
-\
 
 \begin{figure}[h]
 \begin{center}
@@ -682,9 +680,28 @@ Un passage à l'étape de calcul d'inférence n'est validé que si tous les nœu
 \subparagraph{Étape de calcul d'inférence}
 Les calculs d'inférences ne nécessite pas de contrôle sur les paramètres rentrés. Si un cas d'inférence est invalide, c'est le calcul qui le montrera. Le calcul de l'inférence repose uniquement sur une bonne construction du réseau bayésien. 
 
+
 \subsection{Modification de l'interface graphique }
 
-Parler de la division en couche/Étape du code. Une étape pour la création de graphe, une pour la mise en place des probabilité, une pour le calcul d'inférence. l'objectif est de réduire le nombre de contrôle à effectuer a chaque modification du programme. Parler aussi des habitudes des gens qui utilisent ce genre de programme : Une création de graphe et 0 modifications, quelques modifications des probabilités et beaucoup de calculs d'inférences
+Une fois la production du code terminé, les nouvelles fonctionnalités doivent être incorporée dans l'interface. Ce qui a été introduit en premier fut la création de réseaux bayésiens car il s'agit du point de départ de l'analyse scientifique.
+
+\begin{figure}[!h]
+\includegraphics[scale=0.3]{Cycle.png}
+\label{fig 2}
+\caption{présence de cycle}
+\end{figure}
+
+Cette étape est la première dans le processus d'étude. Viens ensuite la phase de mise en place des probabilités. L'utilisateur sélectionne les noeuds un par un et remplie la table des probabilités associée.
+
+\begin{figure}[!h]
+\includegraphics[scale=0.3]{Proba.png}
+\label{fig 3}
+\caption{table de probabilité}
+\end{figure}
+
+Enfin viens la dernière phase qui est celle du calcul des inférences où l'utilisateur aura le choix de lancer une simulation et en choisissant quel événement sont sûrs.\\
+
+Nous avons choisis de découper le processus en trois étape : la création du graphe, la mise en place de probabilité et le calcul d'inférence. Le but de cette découpe est de réduire le nombre de contrôle effectué à chaque modification du graphe. Du fait que l'on utilise des réseaux bayésiens qui possèdent de fortes contraintes - acyclique, dirigé, non-coloré -,le nombre de contrôle à effectuer à chaque fois que l'on modifie le graphe serait lourd. Ainsi, n'effectuer les contrôles qu'une seule fois après avoir fini d'éditer le graphe permet de réduire ce nombre. De plus, les utilisateurs i.e les chercheurs ont l'habitude de créer le graphe et de ne pas le modifier par la suite, d'ajuster les probabilités et enfin de faire les calculs d'inférences nécessaires.
 
 \subsection{Communication entre Matlab Java}
 Subsection text here.
@@ -737,6 +754,7 @@ Nous remercions aussi M.Moulet et M.Domingez les créateurs de DynGraph de nous 
 
 
 % that's all folks
+
 \end{document}
 
 

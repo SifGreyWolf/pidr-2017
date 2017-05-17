@@ -3,11 +3,10 @@
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-A}}Le contexte}{1}
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-B}}Probl\IeC {\`e}matique}{1}
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-C}}Contribution}{1}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-D}}Plan}{1}
 \contentsline {section}{\numberline {II}\IeC {\'E}tat de l'art}{1}
 \contentsline {section}{\numberline {III}M\IeC {\'e}thodologie}{2}
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Analyse de l'outil DynGraph}{2}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Impl\IeC {\'e}mentation des r\IeC {\'e}seaux bay\IeC {\'e}siens}{2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Impl\IeC {\'e}mentation des r\IeC {\'e}seaux bay\IeC {\'e}siens}{3}
 \contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {III-B}0a}Algorithme d'acyclicit\IeC {\'e} \hfill }{3}
 \contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {III-B}0b}Transformation du graphe en r\IeC {\'e}seau bay\IeC {\'e}sien \hfill }{3}
 \contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Impl\IeC {\'e}mentation des probabilit\IeC {\'e}s}{4}
