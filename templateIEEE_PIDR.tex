@@ -332,15 +332,15 @@
 % use a multiple column layout for up to three different
 % affiliations
 \author{
-\IEEEauthorblockN{Raphael Agathon}
+\IEEEauthorblockN{R. Agathon}
 \IEEEauthorblockA{Telecom Nancy \\
 Mail : raphael.agathon@telecomnancy.eu}
 \and
-\IEEEauthorblockN{Valentin Wegmann-Serin}
+\IEEEauthorblockN{V. Wegmann-Serin}
 \IEEEauthorblockA{Télécom Nancy \\
 Mail: valentin.wegmann-serin@telecomnancy.eu}
 \and
-\IEEEauthorblockN{Christophe Simon}
+\IEEEauthorblockN{C. Simon}
 \IEEEauthorblockA{Laboratoire du CRAN \\Mail: christophe.simon@univ-lorraine.fr}
 }
 
@@ -418,7 +418,7 @@ Cette usage est souvent accompagné d'une simulation sur logiciel tel que Matlab
 
 \tableofcontents
 \vspace{0.8cm}
-Les chercheurs utilisant principalement l'outil Matlab pour leur simulation, le but de ce projet est de développer une application open-source communiquant avec Matlab et permettant l'usage des réseaux bayésiens. \\
+Les chercheurs utilisant principalement l'outil Matlab qui offre un environnement numérique qui donne donc la possibilité de faire des calculs, d'évaluer et de simuler des scénarios. Dans ce cadre, il est nécessaire d'avoir une interface homme machine permettant la création de graphes et de réseaux bayésiens. Cette interface doit aussi nous permettre de manipuler et d'interagir avec les graphes créer et par la suite de faire des calculs d'inférences. Cependant, la création d'interface graphique sous Matlab n'est pas aisée et le logiciel que nous utilisons est donc Java. Ainsi , nous avons une contrainte d'intercommunication entre les deux logiciels. 
 
 \textcolor{red}{
 	liste des éléments à rajouter dans la problématique
@@ -566,14 +566,14 @@ Pour arriver à l'objectif, le travail a été divisé en deux parties. Une part
 \subsection{Analyse de l'outil DynGraph}
 \vspace{0.3cm} 
 
-DynGraph est un outil permettant la création et l'édition de graphe. Celui-ci est implémenté en java et se lance depuis Matlab.
-L'interface (cf fig 1) est composé d'un menu basique et d'une barre composé de boutons permettant d'éditer le graphe. L'éditeur ne permet actuellement que de créer des graphes qui sont orientés ou non, colorés ou non. L'éditeur ne permet pas d'imposer des contraintes lors de la création du graphe telle que l'acyclicité ou la non-évaluation des arcs. Chaque graphe crée est représenté par une liste de nœuds et d'arcs. Un arc étant défini par un noeud-début et un noeud-fin et il n'est décrit que par cela. De plus, ce logiciel n'est qu'une visualisation de graphe et ne permet pas de faire des calculs. En effet, toute la partie utile aux calculs n'est pas présente : la liste des successeurs et prédécesseurs ou une matrice d'adjacence ou d'incidence. Seul le côté front-end est très implémenté. Pour ce qui est du back-end, il s'agit de la communication entre Java et Matlab qui est présente puisque chaque action effectué sur l'interface - en java - doit être fait en Matlab et inversement. Enfin, plutôt que de reconstruire une nouvelle interface graphique, nous avons fait en sorte que le code que nous produisions soit un outil supplémentaire pour DynGraph afin que le logiciel puisse répondre aux attentes. Ainsi, nous avons implémenté de nouvelles fonctionnalités. 
+DynGraph est un outil permettant la création et l'édition de graphes. Celui-ci est implémenté en java et se lance depuis Matlab.
+L'interface (cf fig 1) est composée d'un menu basique et d'une barre composé de boutons permettant d'éditer le graphe. L'éditeur ne permet actuellement que de créer des graphes qui sont orientés ou non, colorés ou non. L'éditeur ne permet pas d'imposer des contraintes lors de la création du graphe telle que l'acyclicité ou la non-évaluation des arcs. Chaque graphe crée est représenté par une liste de nœuds et d'arcs (un arc étant défini par un noeud-début et un noeud-fin ainsi que sa couleur et sa direction).Toute la partie utile aux calculs n'est pas présente : la liste des successeurs et prédécesseurs ou une matrice d'adjacence ou d'incidence. Le côté front-end est implémenté, il s'agit de tous l'aspect visuel. Pour ce qui est du back-end, il s'agit de la communication entre Java et Matlab qui est présente puisque chaque action effectuée sur l'interface - en java - doit être faite en Matlab et inversement. Ainsi, Dyngraph est une IHM permettant l'édition de graphe simple mais pas de réseaux bayésiens et ne permettant pas de faire de calculs d'inférence.Les stratégies possibles pour remédier au problème était de trouver un autre outil offrant plus de fonctionnalités ou d'améliorer Dyngraph.Nous avons choisis de l'améliorer puisque Dyngraph possèdent beaucoup de critères que nous recherchons telle que l'intercommunication Matlab-Java dynamique et le fait que ce soit déjà une IHM. Ainsi, en ajoutant des restrictions offrant la possibilité de créer des graphes acyclique non colorés et en couplant le logiciel avec des outils permettant de faire des calculs d'inférence. Dyngraph se pose alors comme solution convenable pour notre problème.
 
 
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[scale=0.30]{Dyngraph.png}\\
-\caption{interface}
+\caption{interface de Dyngraph}
 \label{fig 1}
 \end{center}
 \end{figure}
