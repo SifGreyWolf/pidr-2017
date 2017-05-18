@@ -632,7 +632,7 @@ L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fi
 \caption{Algorithme de détection de cycle}
 \end{algorithm}
 \vspace{0.3cm}
-Cet algorithme permet de détecter la présence de cycle dans un graphe et permet d'identifier les nœuds inscrits dans un cycle. L'algorithme à une complexité en O(max(n,a)) avec n le nombre de nœud et a le nombre d'arc .Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc classé comme nœuds à problème. \\
+Cet algorithme permet de détecter la présence de cycle dans un graphe et permet d'identifier les nœuds inscrits dans un cycle. L'algorithme à une complexité en O(max(n,a)) avec n le nombre de nœud et a le nombre d'arc .Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc classé comme nœuds à problème. La Figure 2 \textcolor{green}{ (si toujours figure 2) } présente 2 cycles. Le nœud présent entre les 2 cycles est considéré comme nœud à problème car  il fait la jonction entre 2 cycles.\\
 Cet algorithme utilise iniquement les outils présents dans DynGraph ce qui le rend compatible extrêmement compatible avec cette application\\
 
 \paragraph{Transformation du graphe en réseau bayésien \hfill }
