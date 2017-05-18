@@ -65,7 +65,7 @@
 \usepackage{color}
 \usepackage[francais]{babel}
 \usepackage[latin1]{inputenc}
-
+	
 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
@@ -685,20 +685,19 @@ Le calcul de l'inférence repose sur l'algorithme de l'arbre de jonction \textco
 
 \subsection{Découpage de l'édition de réseaux bayésiens \hfill}
 \\
-Éditer un réseau bayésiens impose certaines contraintes sur le graphe comme son acyclicité mais aussi des modifications dynamiques liées à toutes évolutions de celui-ci. Par exemple, l'ajout d'un arc entre deux nœuds va modifier la liste des nœuds parent pour l'un et la liste des nœuds enfant pour l'autre. Mais cela implique une mise à jour le la table de probabilité du nœuds enfant. Son nombre de lignes est multiplié par le nombre d'états du nœud ajouté en parent. \\
-Pour minimiser ces problèmes de modifications dynamiques et minimiser le nombre de calculs liés aux contraintes, il a été choisi de découper l'édition et l'utilisation de réseaux bayésiens en plusieurs étapes. Ces étapes correspondent aux pratiques utilisateur  : une édition de graphe, quelques modifications de probabilités et de nombreux calculs d'inférences. \\
+Éditer un réseau bayésiens impose certaines contraintes sur le graphe comme son acyclicité mais aussi des modifications dynamiques liées à toutes évolutions de celui-ci.Ajouter ou supprimer un arc ou un nœud entraine des modifications sur les dimensions d'au moins une table de probabilités. \\
+Pour minimiser ces problèmes de modifications dynamiques et minimiser le nombre de calculs liés aux contraintes, il a été choisi de découper l'édition et l'utilisation de réseaux bayésiens en plusieurs étapes. Ces étapes correspondent aux pratiques utilisateur  : une partie qualitative qui correspond à  l'édition du graphe, une partie quantitative pour la saisie des probabilités et une partie simulation pour les calculs d'inférences. \\
 
-\subparagraph{Étape de création de graphe \hfill} \\
-Cette étape est celle présente dans l'outil DynGraph. L'utilisateur à la possibilité de créer le graphe qu'il souhaite, acyclique ou non. Durant cette étape aucun réseau bayésien n'est instancié car  l'outil ne sait pas si l'utilisateur veut transformer son graphe en réseau bayésien. Si une transformation est demandée, l'algorithme de détection de cycle est lancé. Cette méthode de découpage fait qu'il n'y a qu'un seul appel à l'algorithme de détection de cycle. \\
+\paragraph{Partie qualitative : édition du graphe \\} \\
+Cette étape est celle présente dans l'outil DynGraph. L'utilisateur à la possibilité de créer le graphe qu'il souhaite, acyclique ou non. Durant cette étape aucun réseau bayésien n'est instancié car  l'outil ne sait pas si l'utilisateur veut transformer son graphe en réseau bayésien. Si une transformation est demandée, l'algorithme de détection de cycle est lancé. Cette méthode de découpage fait qu'il n'y a qu'un seul appel à l'algorithme de détection de cycle. Sinon chaque événement sur la structure du graphe induirait une vérification de l'acyclicité. \\
 
-\subparagraph{Étape de mise en place des probabilités \hfill}
-\\
-Dés lors que le graphe est transformé en réseau bayésien, tout retour à l'étape précédente invalide le réseau bayésiens.Si des nœuds et des arcs sont ajoutés ou supprimés, certaines tables de probabilités changent de dimensions qui rend leurs anciennes valeurs fausse. La table de probabilité de chaque nœud dépend de ses états et des différents états que peuvent prendre ses nœuds parent. Cette construction de table est faite durant la transformation du graphe. La table est automatiquement initialiser avec le bon nombre de colonnes et de lignes. \\
+\paragraph{Partie quantitative : saisie probabilités \\ }
+Dés lors que le graphe est transformé en réseau bayésien, tout retour à l'étape précédente invalide le réseau bayésiens. Si des nœuds et des arcs sont ajoutés ou supprimés, certaines tables de probabilités changent de dimensions qui rend leurs anciennes valeurs fausse. La table de probabilité de chaque nœud dépend de ses états et des différents états que peuvent prendre ses nœuds parent. Cette construction de table est faite durant la transformation du graphe. La table est automatiquement initialiser avec le bon nombre de colonnes et de lignes. \\
 L'ajout de probabilités se fait nœud par nœud. Chaque modification d'une table de probabilités n'est prise en compte que si pour chaque ligne, la somme des valeurs est égale à 1. 
 Un passage à l'étape de calcul d'inférence n'est validé que si tous les nœuds ont une table valide. \\
 
-\subparagraph{Étape de calcul d'inférence}
-Les calculs d'inférences ne nécessite pas de contrôle sur les paramètres rentrés. Si un cas d'inférence est invalide, c'est le calcul qui le montrera. Le calcul de l'inférence repose uniquement sur une bonne construction du réseau bayésien. 
+\paragraph{Partie simulation : calculs d'inférences \\}
+Les calculs d'inférence ne nécessite pas de contrôle sur les paramètres rentrés. Si un cas d'inférence est invalide, c'est le calcul qui le montrera. Le calcul de l'inférence repose uniquement sur une bonne construction du réseau bayésien. 
 
 
 \subsection{Modification de l'interface graphique }
