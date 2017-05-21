@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{murphylist}
+Kevin Murphy.
+\newblock Software packages for graphical models.
+
+\bibitem{kmurphy}
+Kevin Murphy.
+\newblock Software for graphical models : a review.
+\newblock {\em ISBA Bulletin}, 2007.
+
+\bibitem{Smail}
+Linda Smail.
+\newblock {\em Algorithmique pour les R´eseaux Bay´esiens et leurs
+  extensions}.
+\newblock PhD thesis, Université de Marne la Vallée, 2004.
+
+\bibitem{reseau}
+Salem Benferhat~Salma Smaoui.
+\newblock {\em Réseaux causaux possibilistes pour le traitement des
+  interventions}.
+\newblock PhD thesis, CRIL,Université d’Artois, 2007.
+
+\end{thebibliography}

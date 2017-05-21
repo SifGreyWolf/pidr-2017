@@ -65,7 +65,7 @@
 \usepackage{color}
 \usepackage[francais]{babel}
 \usepackage[latin1]{inputenc}
-	
+
 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
@@ -342,6 +342,7 @@ Mail: valentin.wegmann-serin@telecomnancy.eu}
 \and
 \IEEEauthorblockN{C. Simon}
 \IEEEauthorblockA{Laboratoire du CRAN \\Mail: christophe.simon@univ-lorraine.fr}
+
 }
 
 
@@ -388,9 +389,9 @@ Java, Matlab, inférence, probabilité, graphe probabiliste
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-The abstract goes here.
+Ce projet de recherche s'inscrit dans le cadre d'études avec l'aide de graphe probabiliste. Les chercheurs utilise principalement l'outil Matlab afin d'effectuer leur simulation cependant il n'existe pas d'IHM (Interface Homme Machine ) dynamique qui permette de créer des réseaux bayésiens et d'interagir directement après avoir rentré les probabilités.
+Ainsi, le problème est de développer une interface permettant d'utiliser des réseaux bayésiens et qui permettent aussi de faire des calculs d'inférences pour étudier les scénarios donnés. Cependant, développer une IHM sous Matlab n'est pas pratique ainsi, l'application doit être développer sous Java et doit pouvoir communiquer dynamiquement avec Matlab. Afin de répondre à ce problème, nous avons choisis d'analyser les différents outils existant et de les trier pour enfin améliorer celui qui se rapprochait le plus de nos critères à savoir la présence d'une IHM, la communication avec Matlab et Java et la possibilité de faire des calculs.
 
-\cite{murphyk}
 \end{abstract}
 
 % no keywords
@@ -413,23 +414,12 @@ The abstract goes here.
 % no \IEEEPARstart
 
 Dans le cadre de la recherche, les chercheurs sont régulièrement amenés à utiliser des outils basés sur des graphes probabilistes ou quasi-probabilistes.\\
-Par exemple, l'étude de la fiabilité d'un système passe par l'analyse d'un graphe comprenant tous les différents composants du système avec leurs états et probabilités associés - la fiabilité étant l'étude des défaillances des systèmes d'un point de vue statistique -. Les graphes utilisés dans cette étude sont des réseaux bayésiens \cite{kmurphy} \cite{Smail}. Ce sont des modèles probabilistes que l'on trouve sous la forme de graphe acyclique et orientés. Ces modèles utilisent la méthode de l'inférence qui est un procédé permettant de déduire la probabilité d'un événement à partir de celles d'autres événements déjà évalués. Elle repose sur le théorème de Bayes qui repose sur les probabilités conditionnelles et permettant de connaître la probabilité d'un événement:  A sachant B ; lorsque l'on connait la probabilité de A, B, et de B sachant A. \\
-Cette usage est souvent accompagné d'une simulation sur logiciel tel que Matlab. Cependant, Matlab ne dispose pas d'outils pratique avec interface graphique permettant de travailler sur les réseaux bayésiens. \\
+Par exemple, l'étude de la fiabilité d'un système passe par l'analyse d'un graphe comprenant tous les différents composants du système avec leurs états et probabilités associés - la fiabilité étant l'étude des défaillances des systèmes d'un point de vue statistique -. Les graphes utilisés dans cette étude sont des réseaux bayésiens. Ce sont des modèles probabilistes que l'on trouve sous la forme de graphe acyclique et orientés. Ces modèles utilisent la méthode de l'inférence qui est un procédé permettant de déduire la probabilité d'un événement à partir de celles d'autres événements déjà évalués. Elle repose sur le théorème de Bayes qui repose sur les probabilités conditionnelles et permettant de connaître la probabilité d'un événement:  A sachant B ; lorsque l'on connait la probabilité de A, B, et de B sachant A. \\
+Cette usage est souvent accompagné d'une simulation sur logiciel tel que Matlab. Cependant, Matlab ne dispose pas d'outils pratique avec interface graphique permettant de travailler sur les réseaux bayésiens. \cite{Smail} \cite{kmurphy} \\
 
 \tableofcontents
 \vspace{0.8cm}
 Les chercheurs utilisant principalement l'outil Matlab qui offre un environnement numérique qui donne donc la possibilité de faire des calculs, d'évaluer et de simuler des scénarios. Dans ce cadre, il est nécessaire d'avoir une interface homme machine permettant la création de graphes et de réseaux bayésiens. Cette interface doit aussi nous permettre de manipuler et d'interagir avec les graphes créer et par la suite de faire des calculs d'inférences. Cependant, la création d'interface graphique sous Matlab n'est pas aisée et le logiciel que nous utilisons est donc Java. Ainsi , nous avons une contrainte d'intercommunication entre les deux logiciels. 
-
-\textcolor{red}{
-	liste des éléments à rajouter dans la problématique
-	\begin{itemize}
-	\item contrainte d'intercommunication Java,Matlab
-	\item création de réseau bayésien et calcul d'inférence.
-	\item présence d'une IHM
-	\end{itemize}
-}
-
-\\
 Afin de répondre au problème donné nous avons choisi de trier tous les logiciels déjà existants puis de surcharger un programme possédant en partie les critères demandés. \\
 
 
@@ -532,8 +522,8 @@ Afin de répondre au problème donné nous avons choisi de trier tous les logici
 
 
 
-\section{Analyse des outils existant}
-Il existe de nombreuses applications permettant l'édition de réseaux bayésiens. Celles-ci ont toutes leurs spécificités que l'on peut organiser sous forme de catégories. \\
+\section{Analyse des outils existants}
+Il existe de nombreuses applications permettant l'édition de réseaux bayésiens \cite{murphylist}. Celles-ci ont toutes leurs spécificités que l'on peut organiser sous forme de catégories. \\
 \begin{itemize}
 	\item{Langage de programmation :} Il existe des boite à outil pour les réseaux bayésiens dans presque tous les langages de programmation. Les plus connues sont Java Bayes qui est en Java et Bayes Net Toolbox sous Matlab. Il existe d'autres application dont on ne connait pas le langage utilisé. Celle-ci sont la plupart du temps payante ou sont des applications web. La plus connue d'entre elles est BayesiaLab. C'est une application fermée offrant une interface graphique mais sans interaction avec Matlab. BayesiaLab possède un API pour les calculs d'inférence mais cette API ne passe pas par l'interface graphique. \\Les contraintes imposent que l'outil à développer soit sous Java et Matlab en même temps. Dimple est une API qui possède une version Java et une Matlab, mais il n'y a aucune communication entre les deux ce qui ne correspond pas à la problématique et aux contraintes. DynGraph, l'application utilisée est la seul à répondre à cette contrainte. Cette contrainte d'intercommunication est la plus restrictive car l'outil doit permettre l'utilisation de Matlab et de Java en parallèle. Toutes les modifications faites dans l'un des langage doit directement impacter l'autre. \\
 	
@@ -632,7 +622,7 @@ L'algorithme repose sur le fait que tous nœud uniquement père ou uniquement fi
 \caption{Algorithme de détection de cycle}
 \end{algorithm}
 \vspace{0.3cm}
-Cet algorithme permet de détecter la présence de cycle dans un graphe et permet d'identifier les nœuds inscrits dans un cycle. L'algorithme à une complexité en O(max(n,a)) avec n le nombre de nœud et a le nombre d'arc .Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc classé comme nœuds à problème. La Figure 2 \textcolor{green}{ (si toujours figure 2) } présente 2 cycles. Le nœud présent entre les 2 cycles est considéré comme nœud à problème car  il fait la jonction entre 2 cycles.\\
+Cet algorithme permet de détecter la présence de cycle dans un graphe et permet d'identifier les nœuds inscrits dans un cycle. L'algorithme à une complexité en O(max(n,a)) avec n le nombre de nœud et a le nombre d'arc .Il est possible que certains nœuds, non présent dans un cycle soient inscrits dans les nœuds à problème. Cela car ils sont à l'intérieur d'un ou plusieurs cycle et sont donc classé comme nœuds à problème. \\
 Cet algorithme utilise iniquement les outils présents dans DynGraph ce qui le rend compatible extrêmement compatible avec cette application\\
 
 \paragraph{Transformation du graphe en réseau bayésien \hfill }
@@ -676,41 +666,44 @@ Après cette étape le graphe réseau bayésien est valide. Toutes les tables de
 
 \subsection{Implémentation des probabilités}
 Dans un réseau bayésien chaque nœud possède une table de probabilités. Cette table possède un nombre de lignes et de colonnes dépendant d'un certain nombre de paramètres. \\
-Le nombre de lignes dépend des différents états que peuvent prendre les variables des nœuds parents de ce nœud. Ce nombre est égal au produit du nombre d'états de chaque nœud parent peut prendre. Si un nœud à 3 nœuds pères, le premier à 2 états, le second et le troisième à 3 états, il y aura 2*3*3 = 18 lignes. Le nombre de colonne, dépend du nombre d'état du nœud. Ainsi chaque case du tableau contient la probabilité que le nœud soit dans un état sachant que les nœuds pères sont dans un certain état.\\
+Le nombre de lignes dépend des différents états que peuvent prendre les variables des nœuds parents de ce nœud. Ce nombre est égal au produit du nombre d'états de chaque nœud parent peut prendre. Si un nœud à 3 nœuds pères, le premier à 2 états, le second et le troisième à 3 états, il y aura 2*3*3 = 18 lignes. Le nombre de colonnes, dépend du nombre d'état du nœud. Ainsi chaque case du tableau contient la probabilité que le nœud soit dans un état sachant que les nœuds pères sont dans un certain état.\\
 En plus de cette contrainte sur le nombre de lignes et de colonnes, il y a des contraintes sur les valeurs entrées en paramètre. Premièrement il doit y avoir le bon nombre de valeurs et la somme des valeurs sur une ligne doit être égal à 1. Cette dernière contrainte est une contrainte probabiliste. \\  
 Une table de probabilité est considérer comme valide lorsque toutes  
 
 \subsection{Calcul de l'inférence}
-Le calcul de l'inférence repose sur l'algorithme de l'arbre de jonction \textcolor{green}{mettre une référence https://pdfs.semanticscholar.org/a8d0/f785991019484a64b530849127aca798a9b1.pdf}. Cet algorithme est présent dans l'outil Jayes. Pour pouvoir l'utiliser sans problème il suffit de vérifier que tous les nœuds du graphe ont bien leur table de probabilités valide. 
+Le calcul de l'inférence repose sur l'algorithme de l'arbre de jonction \cite{reseau}. Cet algorithme est présent dans l'outil Jayes. Pour pouvoir l'utiliser sans problème il suffit de vérifier que tous les nœuds du graphe ont bien leur table de probabilités valide. 
 
 \subsection{Découpage de l'édition de réseaux bayésiens \hfill}
 \\
-Éditer un réseau bayésiens impose certaines contraintes sur le graphe comme son acyclicité mais aussi des modifications dynamiques liées à toutes évolutions de celui-ci.Ajouter ou supprimer un arc ou un nœud entraine des modifications sur les dimensions d'au moins une table de probabilités. \\
-Pour minimiser ces problèmes de modifications dynamiques et minimiser le nombre de calculs liés aux contraintes, il a été choisi de découper l'édition et l'utilisation de réseaux bayésiens en plusieurs étapes. Ces étapes correspondent aux pratiques utilisateur  : une partie qualitative qui correspond à  l'édition du graphe, une partie quantitative pour la saisie des probabilités et une partie simulation pour les calculs d'inférences. \\
+Éditer un réseau bayésiens impose certaines contraintes sur le graphe comme son acyclicité mais aussi des modifications dynamiques liées à toutes évolutions de celui-ci. Par exemple, l'ajout d'un arc entre deux nœuds va modifier la liste des nœuds parent pour l'un et la liste des nœuds enfant pour l'autre. Mais cela implique une mise à jour le la table de probabilité du nœuds enfant. Son nombre de lignes est multiplié par le nombre d'états du nœud ajouté en parent. \\
+Pour minimiser ces problèmes de modifications dynamiques et minimiser le nombre de calculs liés aux contraintes, il a été choisi de découper l'édition et l'utilisation de réseaux bayésiens en plusieurs étapes. Ces étapes correspondent aux pratiques utilisateur  : une édition de graphe, quelques modifications de probabilités et de nombreux calculs d'inférences. \\
 
-\paragraph{Partie qualitative : édition du graphe \\} \\
-Cette étape est celle présente dans l'outil DynGraph. L'utilisateur à la possibilité de créer le graphe qu'il souhaite, acyclique ou non. Durant cette étape aucun réseau bayésien n'est instancié car  l'outil ne sait pas si l'utilisateur veut transformer son graphe en réseau bayésien. Si une transformation est demandée, l'algorithme de détection de cycle est lancé. Cette méthode de découpage fait qu'il n'y a qu'un seul appel à l'algorithme de détection de cycle. Sinon chaque événement sur la structure du graphe induirait une vérification de l'acyclicité. \\
+\paragraph{Étape de création de graphe \\} \\
+Cette étape est celle présente dans l'outil DynGraph. L'utilisateur à la possibilité de créer le graphe qu'il souhaite, acyclique ou non. Durant cette étape aucun réseau bayésien n'est instancié car  l'outil ne sait pas si l'utilisateur veut transformer son graphe en réseau bayésien. Si une transformation est demandée, l'algorithme de détection de cycle est lancé. Cette méthode de découpage fait qu'il n'y a qu'un seul appel à l'algorithme de détection de cycle. \\
 
-\paragraph{Partie quantitative : saisie probabilités \\ }
-Dés lors que le graphe est transformé en réseau bayésien, tout retour à l'étape précédente invalide le réseau bayésiens. Si des nœuds et des arcs sont ajoutés ou supprimés, certaines tables de probabilités changent de dimensions qui rend leurs anciennes valeurs fausse. La table de probabilité de chaque nœud dépend de ses états et des différents états que peuvent prendre ses nœuds parent. Cette construction de table est faite durant la transformation du graphe. La table est automatiquement initialiser avec le bon nombre de colonnes et de lignes. \\
+\paragraph{Étape de mise en place des probabilités \\}
+\\
+Dés lors que le graphe est transformé en réseau bayésien, tout retour à l'étape précédente invalide le réseau bayésiens.Si des nœuds et des arcs sont ajoutés ou supprimés, certaines tables de probabilités changent de dimensions qui rend leurs anciennes valeurs fausse. La table de probabilité de chaque nœud dépend de ses états et des différents états que peuvent prendre ses nœuds parent. Cette construction de table est faite durant la transformation du graphe. La table est automatiquement initialiser avec le bon nombre de colonnes et de lignes. \\
 L'ajout de probabilités se fait nœud par nœud. Chaque modification d'une table de probabilités n'est prise en compte que si pour chaque ligne, la somme des valeurs est égale à 1. 
 Un passage à l'étape de calcul d'inférence n'est validé que si tous les nœuds ont une table valide. \\
 
-\paragraph{Partie simulation : calculs d'inférences \\}
-Les calculs d'inférence ne nécessite pas de contrôle sur les paramètres rentrés. Si un cas d'inférence est invalide, c'est le calcul qui le montrera. Le calcul de l'inférence repose uniquement sur une bonne construction du réseau bayésien. 
+\paragraph{Étape de calcul d'inférence \\}
+Les calculs d'inférences ne nécessite pas de contrôle sur les paramètres rentrés. Si un cas d'inférence est invalide, c'est le calcul qui le montrera. Le calcul de l'inférence repose uniquement sur une bonne construction du réseau bayésien. 
 
 
 \subsection{Modification de l'interface graphique }
 
-Une fois la production du code terminé, les nouvelles fonctionnalités doivent être incorporée dans l'interface. Ce qui a été introduit en premier fut la création de réseaux bayésiens car il s'agit du point de départ de l'analyse scientifique.
-
+Une fois la production du code terminé, les nouvelles fonctionnalités doivent être incorporée dans l'interface. Ce qui a été introduit en premier fut la création de réseaux bayésiens car il s'agit du point de départ de l'analyse scientifique. Cette phase permet d'éditer et de manipuler des graphes, lorsque l'on clique sur le bouton DAG ( Directed Acyclic Graph ), on vérifié que le graphe ne présente pas de cycle (cf. figure 2), que tous les arcs soient dirigés et la coloration du graphe est supprimé. Sur la figure 2, on peut voir que certain nœud sont colorés en vert, indiquant qu'ils font parti d'un cycle. Le noeud numéro 4 est aussi coloré même s'il ne fait pas parti d'un cycle car il est situé entre deux cycle. 
 \begin{figure}[!h]
 \includegraphics[scale=0.3]{Cycle.png}
 \label{fig 2}
 \caption{présence de cycle}
 \end{figure}
 
-Cette étape est la première dans le processus d'étude. Viens ensuite la phase de mise en place des probabilités. L'utilisateur sélectionne les noeuds un par un et remplie la table des probabilités associée.
+
+
+Cette étape est la première dans le processus d'étude. Viens ensuite la phase de mise en place des probabilités. L'utilisateur sélectionne les nœuds racines puis remplie la table de probabilité associée (cf. Figure 3). La figure 3 représente l'interface permettant de remplir la table de probabilité qui est associé au nœud racine.  
+Pour les nœuds fils, l'utilisateur rempli les tables de probabilités conditionnelles associées. 
 
 \begin{figure}[!h]
 \includegraphics[scale=0.3]{Proba.png}
@@ -718,28 +711,95 @@ Cette étape est la première dans le processus d'étude. Viens ensuite la phase
 \caption{table de probabilité}
 \end{figure}
 
-Enfin viens la dernière phase qui est celle du calcul des inférences où l'utilisateur aura le choix de lancer une simulation et en choisissant quel événement sont sûrs.\\
+Enfin vient la dernière phase qui est celle du calcul des inférences où l'utilisateur aura le choix de lancer une simulation et en choisissant quel événement sont sûrs.\\
 
 Nous avons choisis de découper le processus en trois étape : la création du graphe, la mise en place de probabilité et le calcul d'inférence. Le but de cette découpe est de réduire le nombre de contrôle effectué à chaque modification du graphe. Du fait que l'on utilise des réseaux bayésiens qui possèdent de fortes contraintes - acyclique, dirigé, non-coloré -,le nombre de contrôle à effectuer à chaque fois que l'on modifie le graphe serait lourd. Ainsi, n'effectuer les contrôles qu'une seule fois après avoir fini d'éditer le graphe permet de réduire ce nombre. De plus, les utilisateurs i.e les chercheurs ont l'habitude de créer le graphe et de ne pas le modifier par la suite, d'ajuster les probabilités et enfin de faire les calculs d'inférences nécessaires.
 
-\subsection{Communication entre Matlab Java}
-Subsection text here.
-
-
 \section{Résultats}
-	L'outil créer permet l'édition de réseau bayésiens tous en conservant les possibilité qu'offre l'outil DynGraph. Les graphes de réseau bayésien et les calculs d'inférence sont fonctionnels mais peuvent être optimisés. 
+	L'outil créer permet l'édition de réseau bayésiens tous en conservant les possibilité qu'offre l'outil DynGraph. Les graphes de réseau bayésien et les calculs d'inférence sont fonctionnels mais peuvent être optimisés.
+	
+	Afin d'illustrer le logiciel, prenons un modèle mathématique(cf. Figure 3). Soit un système simple à trois composants, le système fonctionne si R3 fonctionne et que R1 ou R2 fonctionnent.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.8]{Schema.png}
+\label{fig 4}
+\caption{Système simple à trois composants}
+\end{center}
+\end{figure}
+
+Chaque composant $\textrm{R}_\textrm{i}$ suit la loi de probabilité suivante:\\
+\begin{center}
+\begin{equation}
+	$\textrm{R}_\textrm{i}$(t) = \exp($\textrm{-\lambda}_\textrm{i}$t) où R représente la probabilité que le composant fonctionne avec:
+	\begin{itemize}
+		\item t = 1000 h
+		\item \textrm{\lambda}_\textrm{1}$ = 10\up{-3} h\up{-1}
+		\item \textrm{\lambda}_\textrm{2}$ = 10\up{-4} h\up{-1}
+		\item \textrm{\lambda}_\textrm{3}$ = 10\up{-3} h\up{-1}
+	\end{itemize}
+\end{equation}
+\end{center}
+
+\begin{center}
+\begin{equation}
+	et $\textrm{R}_\textrm{s}$(t) = $\textrm{R}_\textrm{3}$(t).[1-(1-$\textrm{R}_\textrm{1}$(t)).(1-$\textrm{R}_\textrm{2}$(t))] 
+\end{equation}
+\end{center}
+
+Nous avons notre système, il faut le représenter sous forme de réseau bayésien (cf. figure 5). Les nœuds racines représentent les trois composants du système, étant donné que R1 et R2 sont en parallèle, on obtient le nœud R1+R2 au sens du ou logique. Enfin, R3 et R1+R2 donne le nœud donnant la probabilité du système. 
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.3]{Systeme.png}
+\label{fig 5}
+\caption{Système simple à trois composants}
+\end{center}
+\end{figure}
+
+Une fois le réseau bayésien établit, il faut rentrer les probabilités dans les tables de chaque nœud (cf. figure 6). La ta de gauche représente les états des nœuds parents tandis que la table de droite est celle du nœud fils. 
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.35]{Table.png}
+\label{fig 6}
+\caption{Table de probabilités du noeud R1+R2}
+\end{center}
+\end{figure}
+
+Lorsque toutes les probabilités ont été rentrées, on passe sur le calcul d'inférence : par exemple, on observe que le système ne marche pas et on veut retrouver la loi de probabilité de R1. Ainsi on indique au logiciel que le nœud S est dans l'état "Not Working". Si on fait d'autres observations, on les indiquent au logiciel. Enfin, on répercute ceci sur les nœuds non-observés et on retrouve la probabilité de R1.
+
+Prenons maintenant un exemple plus concret : Soit un système défaillant, on veut connaître qu'elle est la cause de ce problème. Dans ce cas, le réseau bayésien fait office d'arbre de diagnostic pour l'isolation de défaut(cf. figure 7). Le nœud S représente le système et possède deux états : Vrai s'il est défaillant, Faux s'il est en état de marche. Chaque nœud C représente une cause du problème, ces nœuds pouvant être  redécoupé en sous-causes. Chacun des nœuds C possède aussi deux états : Vrai s'il est la cause du problème, faux sinon. Au départ, les nœuds racines sont initialisés à faux ( 0 pour la valeur vraie, 1 pour la valeur fausse). Chacun des nœuds fils étant des nœuds XOR. Les nœuds racines sont initialisés à 0 pour l'état vrai et 1 pour l'état faux. Les autres nœuds possèdent des tables probabilités induites des probabilités des nœuds racine. Lorsque le calcul d'inférence est lancé avec comme entrée vrai pour S. On obtient les probabilités pour les autres nœuds. L'utilisateur choisit le nœud avec la plus grande probabilité d'être dans l'état Vrai. Si ce nœud est dans l'état Vrai, on a trouvé la cause du problème. Sinon, on observe donc que le nœud est dans l'état faux et on notifie l'application. Puis on réitère le calcul d'inférence en sachant toujours que le système ne marche pas. Puis on rechoisit le nœud qui a la plus grande probabilité d'être dans l'état vrai et ainsi de suite jusqu'à trouvé la cause du problème.
+
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.35]{Arbre_de_diagnostic.png}
+\label{fig 6}
+\caption{Arbre de diagnostic pour l'isolation de défaut}
+\end{center}
+\end{figure}
+
+Les réseaux bayésiens peuvent aussi être utilisé pour des états non booléens. Cela s'effectue de la même manière que pour le système simple à trois composants.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.7]{Rain.png}
+\label{fig 7}
+\caption{Réseau bayésien avec état non booléen}
+\end{center}
+\end{figure}
+
+
 
 \section{Conclusion}
-
-	L'objectif de notre projet à été de créer un outil Matlab et Java pour l'édition de réseaux bayésiens. Cet outil s'ajoute en extension de le l'outil DynGraph.\\
+	L'objectif de notre projet à été de créer un outil Matlab et Java pour l'édition de réseaux bayésiens. Avec l'amélioration de Dyngraph, nous avons répondu à cette problématique car nous pouvons créer des réseaux bayésiens, effectuer des calculs d'inférence dessus et donc faire l'étude de différents systèmes. La prochaine étape de se projet serait d'améliorer encore le dynGraph actuel afin que la communication Matlab permette aussi d'exporter les données dû à la phase de calculs dans le logiciel Matlab.
 	
 
 \section{Remerciements}
 Nous souhaitons adresser nos remerciements aux personnes nous ayant aider dans la rédaction
 de cet article, en particulier à M.Simon, notre encadrant de PIDR qui a su nous éclairer dans l'avancée de notre projet. \\
 Nous remercions aussi M.Moulet et M.Domingez les créateurs de DynGraph de nous avoir permis d'utiliser leur outil et pour  l'aide qu'il nous ont apporté tout au long de notre projet. 
-
-\section{annexe}
 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
@@ -763,17 +823,11 @@ Nous remercions aussi M.Moulet et M.Domingez les créateurs de DynGraph de nous 
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\bibliographystyle{plain}
-\bibliography{./pidr}
-
-\cite{Matlab}
-\cite{jayes}
-
-
 
 
 % that's all folks
-
+\bibliographystyle{plain}
+\bibliography{./biblio}
 \end{document}
 
 
