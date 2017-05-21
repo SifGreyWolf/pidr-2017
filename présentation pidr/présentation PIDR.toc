@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Contexte/Probl\IeC {\'e}matique}{3}{0}{1}
+\beamer@sectionintoc {2}{D\IeC {\'e}finitions}{4}{0}{2}
+\beamer@sectionintoc {3}{Analyse des outils existants}{6}{0}{3}
+\beamer@sectionintoc {4}{Pr\IeC {\'e}sentation de l'outil DynGraph}{9}{0}{4}
+\beamer@sectionintoc {5}{M\IeC {\'e}thodologie}{10}{0}{5}
+\beamer@subsectionintoc {5}{1}{Impl\IeC {\'e}mentation des r\IeC {\'e}seaux bay\IeC {\'e}siens et des calculs d'inf\IeC {\'e}rence }{10}{0}{5}
+\beamer@subsectionintoc {5}{2}{D\IeC {\'e}coupage de l'\IeC {\'e}dition de r\IeC {\'e}seaux bay\IeC {\'e}siens}{16}{0}{5}
+\beamer@subsectionintoc {5}{3}{Modification de l'interface graphique}{17}{0}{5}
+\beamer@sectionintoc {6}{R\IeC {\'e}sultats}{18}{0}{6}
